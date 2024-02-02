@@ -1,0 +1,9 @@
+@use "../util" as u;
+
+.wrapper {
+	width: min(
+		u.rem(1110),
+		calc(100% - u.rem(32))
+	); // max-width 1110px, and the spacing on either side 16px each side. this is a good method for getting a margin left, right. Note: The calc function calculates the margin for the content at smaller screens and the margin auto, centers the wrapper in the middle of the page at larger screens.
+	margin-inline: auto;
+}
