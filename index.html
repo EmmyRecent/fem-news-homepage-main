@@ -2,68 +2,94 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>News page</title>
+		<!-- Google fonts: Inter -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<header class="wrapper">
+		<header class="header wrapper">
 			<!-- Logo -->
 			<a href="/">
-				<img src="/images/logo.svg" alt="Homepage" width="64" height="40" />
+				<img class="header__logo" src="/images/logo.svg" alt="Homepage" width="64" height="40" />
 			</a>
 
 			<!-- Navigation links -->
 			<nav>
 				<ul>
-					<li><a href="">Home</a></li>
-					<li><a href="">New</a></li>
-					<li><a href="">Popular</a></li>
-					<li><a href="">Trending</a></li>
-					<li><a href="">Categories</a></li>
+					<li><a class="header__link" href="">Home</a></li>
+					<li><a class="header__link" href="">New</a></li>
+					<li><a class="header__link" href="">Popular</a></li>
+					<li><a class="header__link" href="">Trending</a></li>
+					<li><a class="header__link" href="">Categories</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<!-- Main section -->
 		<main>
-			<article class="wrapper grid">
+			<article class="grid wrapper">
 				<!-- Features section -->
 				<section class="feature">
 					<!-- Responsive image  -->
 					<picture>
-						<source media="(min-width: 1024px)" srcset="/images/feature-desktop.jpg 1x, /images/feature-desktop-2x.jpg 2x" />
-						<img class="feature__image" src="/images/feature-mobile.jpg" alt="Assortment of colorful blocks" srcset="/images/feature-mobile-2x.jpg 2x" />
+						<source
+							media="(min-width: 1024px)"
+							srcset="/images/feature-desktop.jpg 1x, /images/feature-desktop-2x.jpg 2x"
+							width="730"
+							height="300"
+						/>
+						<img
+							class="feature__image"
+							src="/images/feature-mobile.jpg"
+							alt="Assortment of colorful blocks"
+							srcset="/images/feature-mobile-2x.jpg 2x"
+							width="343"
+							height="300"
+						/>
 					</picture>
 					<h1 class="feature__headline">The Bright Future of Web 3.0?</h1>
-					<p class="feature__description">We dive into the next solution of the web that claims to power of the platforms back into the hands of the people really fulfilling its promise?</p>
+					<p class="feature__description">
+						We dive into the next solution of the web that claims to power of the platforms back
+						into the hands of the people really fulfilling its promise?
+					</p>
 					<a href="" class="feature__button">Read More</a>
 				</section>
 
 				<!-- New section  -->
 				<section class="new">
-					<h2>New</h2>
+					<h2 class="new__title">New</h2>
 
 					<!-- Posts -->
 					<article class="new__post">
-						<h3 class="new__headline">
-							<a href="">Hydrogen Vs Electric cars</a>
+						<h3>
+							<a class="new__headline" href="">Hydrogen Vs Electric cars</a>
 						</h3>
 						<p class="new__description">Will hydrogen-fueled cars ever catch up to EVs?</p>
 					</article>
 
 					<article class="new__post">
-						<h3 class="new__headline">
-							<a href="">Is Vc Funding Drying Up?</a>
+						<h3>
+							<a class="new__headline" href="">Is Vc Funding Drying Up?</a>
 						</h3>
-						<p class="new__description">Private funding by VC firm is down 50% YOY. we take a look at what that means.</p>
+						<p class="new__description">
+							Private funding by VC firm is down 50% YOY. we take a look at what that means.
+						</p>
 					</article>
 
 					<article class="new__post">
-						<h3 class="new__headline">
-							<a href="">The Downside of AI Artistry</a>
+						<h3>
+							<a class="new__headline" href="">The Downside of AI Artistry</a>
 						</h3>
-						<p class="new__description">What are the possible adverse effects of on-demand AI image generation?</p>
+						<p class="new__description">
+							What are the possible adverse effects of on-demand AI image generation?
+						</p>
 					</article>
 				</section>
 
@@ -72,21 +98,29 @@
 					<article class="blog__item">
 						<img src="/images/news-1.jpg" alt="" class="blog__image" />
 						<div class="blog__number">01</div>
-						<h3 class="blog__headline">Reviving Retro Pcs</h3>
-						<p class="blog__description">What happens when your old pcs are given modern upgrades</p>
+						<h3 class="blog__headline">
+							<a href="">Reviving Retro Pcs</a>
+						</h3>
+						<p class="blog__description">
+							What happens when your old pcs are given modern upgrades
+						</p>
 					</article>
 
 					<article class="blog__item">
 						<img src="/images/news-2.jpg" alt="" class="blog__image" />
 						<div class="blog__number">02</div>
-						<h3 class="blog__headline">Top Laptops of 2022</h3>
+						<h3 class="blog__headline">
+							<a href="">Top Laptops of 2022</a>
+						</h3>
 						<p class="blog__description">Our best picks for various needs and budget.</p>
 					</article>
 
 					<article class="blog__item">
 						<img src="/images/news-3.jpg" alt="" class="blog__image" />
 						<div class="blog__number">03</div>
-						<h3 class="blog__headline">The Growth of Gaming</h3>
+						<h3 class="blog__headline">
+							<a href="">The Growth of Gaming</a>
+						</h3>
 						<p class="blog__description">How the pandemic has sparked fresh opportunities</p>
 					</article>
 				</section>
