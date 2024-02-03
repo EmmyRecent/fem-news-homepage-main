@@ -1,0 +1,44 @@
+@use "../util" as u;
+
+.nav {
+	button {
+		background: none;
+		border: none;
+		padding: 0;
+
+		@media (width >= u.rem(1110)) {
+			display: none;
+		}
+	}
+
+	&__open {
+	}
+
+	&__content {
+		@media (width < u.em(1110)) {
+			display: none;
+			position: fixed;
+			// z-index: 1; // You can do this or in the html change the order for the overlay.
+			inset: 0 0 0 u.rem(120); // A short hand property for top, right, bottom, left
+			background-color: var(--c-white);
+			padding: u.rem(30);
+			translate: 100vw 0; // Move the contents horizontally 100vw and vertically 0.
+			transition: translate 500ms ease-in-out; // Animating the transition property to 500ms ease-in-out.
+		}
+	}
+
+	&__close {
+		display: block;
+		margin-inline-start: auto;
+		margin-block-end: u.rem(86);
+	}
+
+	&__overlay {
+		display: none;
+		position: fixed;
+		inset: 0;
+		background-color: var(--c-blue);
+		opacity: 0;
+		transition: opacity 300ms ease-in-out; // Animation for the opacity.
+	}
+}

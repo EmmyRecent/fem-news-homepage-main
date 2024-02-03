@@ -28,10 +28,9 @@
 	}
 
 	&__description {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: space-between;
+		p {
+			margin-block-end: u.rem(30);
+		}
 	}
 
 	&__button {
