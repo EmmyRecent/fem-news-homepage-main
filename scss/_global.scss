@@ -72,3 +72,7 @@ ul {
 li {
 	list-style: none;
 }
+
+.noscroll {
+	overflow-y: hidden; // This locks the horizontal scroll of the page when mobile navigation is open. this enhances the user experience. Note: this class will be added to the body tag in the html via javaScript.
+}
