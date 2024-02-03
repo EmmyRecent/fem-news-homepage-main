@@ -11,7 +11,12 @@
 		}
 	}
 
-	&__open {
+	// aria-expanded attribute when set to true should slide in the navigation menu.
+	&__open[aria-expanded="true"] {
+		// Note: ~ is a general sibling selector in css.
+		~ .nav__content {
+			translate: 0;
+		}
 	}
 
 	&__content {
