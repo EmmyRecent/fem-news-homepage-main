@@ -54,6 +54,8 @@ p {
 
 a {
 	text-decoration: none;
+	transition: 150ms ease-in-out; // Transition for all anchor links tag.
+	transition-property: color, background-color;
 }
 
 img {

@@ -1,11 +1,25 @@
 @use "../util" as u;
 
 .header {
+	// NAvigation links style.
+	@media (width >= u.em(1110)) {
+		display: flex;
+		justify-content: space-between;
+		padding-block: u.rem(90) u.rem(55);
+	}
+
 	&__logo {
 		width: u.rem(45);
 
 		@media (width >= u.em(1110)) {
 			width: u.rem(64);
+		}
+	}
+
+	&__links {
+		@media (width >= u.em(1110)) {
+			display: flex;
+			gap: u.rem(40);
 		}
 	}
 
@@ -17,6 +31,11 @@
 		@media (width >= u.em(1110)) {
 			font-size: var(--f-body);
 			color: var(--c-gray);
+		}
+
+		// Hover states.
+		&:hover {
+			color: var(--c-red);
 		}
 	}
 }
