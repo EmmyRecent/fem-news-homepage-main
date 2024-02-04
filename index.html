@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>News page</title>
+		<title>News Homepage</title>
 		<!-- Google fonts: Inter -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,10 +37,11 @@
 				<div class="nav__overlay" aria-hidden="true"></div>
 
 				<!-- Navigation content -->
-				<div class="nav__content">
+				<!-- inert attribute is for screen readers accessibility. but it i will be added into the javaScript for mobile breakpoint -->
+				<div class="nav__content" role="dialog" aria-labelledby="nav-label">
 					<!-- Close menu. -->
-					<button id="btnClose" class="nav__close">
-						<svg width="32" height="31" xmlns="http://www.w3.org/2000/svg">
+					<button id="btnClose" class="nav__close" aria-label="Close">
+						<svg width="32" height="31" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 							<g fill="#00001A" fill-rule="evenodd">
 								<path d="m2.919.297 28.284 28.284-2.122 2.122L.797 2.419z" />
 								<path d="M.797 28.581 29.081.297l2.122 2.122L2.919 30.703z" />

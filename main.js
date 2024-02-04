@@ -1,11 +1,13 @@
 import "./scss/style.scss";
 
 const body = document.querySelector("body");
+const main = document.querySelector("main");
 const btnOpen = document.querySelector("#btnOpen");
 const btnClose = document.querySelector("#btnClose");
-const media = window.matchMedia("(width < 69.375em)"); // media Query. also written as window.matchMedia("(width < 69.375em)").matches; while will give either true or false.
+const media = window.matchMedia("(width < 69.375em)"); // media Query. also written as window.matchMedia("(width < 69.375em)").matches; while will give true or false.
 const navContent = document.querySelector(".nav__content");
 const navOverlay = document.querySelector(".nav__overlay");
+
 // This function handles the opening of the mobile navigation.
 function openMobileMenu() {
 	console.log("Open menu"); // Test.
@@ -13,21 +15,35 @@ function openMobileMenu() {
 	btnOpen.setAttribute("aria-expanded", "true"); // This is for the accessibility for screen readers.
 
 	body.classList.add("noscroll"); // Adding the class noscroll to the body tag when the mobile navigation is open.
+
+	navContent.removeAttribute("inert");
+
+	main.setAttribute("inert", "");
+
+	btnClose.focus(); // To focus on the close menu btn navigation is open and vice versa.
 }
 
 // This function handles the closing of the mobile navigation.
 function closeMobileMenu() {
 	console.log("Close menu"); // Test.
 
-	btnOpen.setAttribute("aria-expanded", "false"); // This is for the accessibility for screen readers.
+	btnOpen.setAttribute("aria-expanded", "false"); // This is for the accessibility for screen readers also for the navigation.
 
 	body.classList.remove("noscroll"); // Removing the class when the close menu is being clicked
+
+	navContent.setAttribute("inert", "");
+
+	main.removeAttribute("inert");
+
+	btnOpen.focus();
 }
 
 function setupNav(e) {
 	if (e.matches) {
 		// This is mobile
 		console.log("This is mobile");
+
+		navContent.setAttribute("inert", ""); // setting the attribute inert to the navContent on mobile screen
 
 		// Delayed the animation for 500ms for the style when window is being reloaded. and set to display block
 		setTimeout(() => {
@@ -38,6 +54,10 @@ function setupNav(e) {
 	} else {
 		// This is desktop.
 		console.log("This is desktop");
+
+		navContent.removeAttribute("inert"); // Removing the attribute on desktop.
+
+		main.removeAttribute("inert");
 
 		navContent.style.display = "";
 	}
@@ -55,4 +75,10 @@ btnClose.addEventListener("click", closeMobileMenu);
 media.addEventListener("change", function (e) {
 	// console.log(`window.matchMedia change = ${+e.matches}`);
 	setupNav(e);
+});
+
+document.addEventListener("keyup", (e) => {
+	if (e.key == "Tab") {
+		console.log(document.activeElement);
+	}
 });

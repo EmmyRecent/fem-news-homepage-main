@@ -16,6 +16,10 @@
 		// Note: ~ is a general sibling selector in css.
 		~ .nav__content {
 			translate: 0;
+
+			@media (prefers-reduced-motion) {
+				opacity: 1;
+			}
 		}
 
 		~ .nav__overlay {
@@ -33,6 +37,13 @@
 			padding: u.rem(30);
 			translate: 100vw 0; // Move the contents horizontally 100vw and vertically 0.
 			transition: translate 500ms ease-in-out; // Animating the transition property to 500ms ease-in-out.
+		}
+
+		// Opting the users if they don't want screen animations.
+		@media (prefers-reduced-motion) {
+			translate: 0;
+			opacity: 0;
+			transition: opacity 500ms ease-in-out;
 		}
 	}
 
